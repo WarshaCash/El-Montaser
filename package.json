@@ -1,0 +1,18 @@
+{
+  "name": "workshop-system",
+  "private": true,
+  "description": "نظام ورشة «المنتصر» للنجارة والفواتير: HTML + CSS + JavaScript + IndexedDB بلا خادم",
+  "scripts": {
+    "build": "python3 build.py",
+    "test:arch": "node tests/architecture.mjs",
+    "test:conn": "node tests/connection.mjs",
+    "test:e2e": "node tests/e2e.mjs",
+    "test:expenses": "node tests/expenses.e2e.mjs",
+    "test:backup": "node tests/backup.e2e.mjs",
+    "test": "python3 build.py && node tests/architecture.mjs && node tests/connection.mjs && node tests/expenses.e2e.mjs && node tests/backup.e2e.mjs && node tests/e2e.mjs",
+    "baseline": "node tests/architecture.mjs --update-baseline"
+  },
+  "devDependencies": {
+    "playwright": "*"
+  }
+}
