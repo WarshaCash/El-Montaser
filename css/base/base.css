@@ -1,0 +1,6 @@
+/* الهوية: بني جوز + نحاسي + ذهبي كما في شعار «المنتصر» */
+:root{--walnut:#241206;--walnut-2:#170B03;--walnut-3:#6A340F;--copper:#A65217;--copper-2:#BF6A2C;--gold:#F9C063;--gold-2:#FCD997;--gold-3:#A65217;--ivory:#F7F3EC;--white:#FFFFFF;--ink:#241206;--muted:#817466;--line:#E3D5C2;--danger:#B3261E;--sb:268px;--sbc:76px;--r:14px;--shadow:0 1px 2px rgba(36,18,6,.06),0 8px 22px rgba(36,18,6,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6}
+a{color:var(--walnut-3)}

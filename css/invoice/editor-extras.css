@@ -1,0 +1,19 @@
+/* أسفل الفاتورة: يمين = إمضاء العميل، المنتصف = التواصل، يسار = الإدارة ومكان ختم الورشة تحتها */
+.sh-blk{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.sheet[class*="fit-"] .sh-blk{gap:calc(var(--fg) / 2)}
+
+/* حذف فاتورة */
+.del-opts{display:grid;gap:8px}.del-opts p{margin:0 0 4px;font-weight:700}
+.del-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.del-opt:has(input:checked){border-color:var(--gold);background:var(--ivory)}
+.del-opt span{display:flex;flex-direction:column;gap:2px}.del-opt small{color:var(--muted)}
+.btn.danger[type=submit]{padding:9px 18px;font-size:1rem;background:var(--danger);color:#fff}
+
+/* عميل جديد داخل شاشة الفاتورة */
+.new-cust{margin-top:12px;padding:12px 14px;border:1px dashed var(--gold);border-radius:10px;background:var(--ivory)}
+.new-cust .hint{margin:8px 0 0}
+.cust-toggle{min-height:42px;padding:9px 16px;font-size:1rem;display:inline-flex;align-items:center;white-space:nowrap;box-sizing:border-box}
+input[type=date]{height:42px;padding-top:4px;padding-bottom:4px;box-sizing:border-box}
+/* الإجمالي في شاشة الفاتورة: مجموع تلقائي غير قابل للتعديل */
+input.total-lock{background:var(--ivory);font-weight:800;color:var(--walnut);cursor:default}
+input.total-lock:focus{border-color:#CDC4AB;box-shadow:none}

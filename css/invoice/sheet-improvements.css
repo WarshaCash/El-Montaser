@@ -1,0 +1,16 @@
+/* تحسينات الفاتورة: تذييل أسفل الورقة، ملخص مالي ملوّن، أعمدة ثابتة */
+.sheet{display:flex;flex-direction:column;min-height:296mm}
+.sheet .sh-foot{margin-top:auto}
+.sh-sum,.sh-foot{break-inside:avoid}
+.sh-items{table-layout:fixed}
+.sh-items td{overflow-wrap:anywhere}
+.sh-items td.c,.sh-items th:nth-child(1),.sh-items th:nth-child(4),.sh-items th:nth-child(5),.sh-items th:nth-child(6){text-align:center}
+.sh-sum td.num{direction:ltr;text-align:left;font-variant-numeric:tabular-nums;font-weight:700}
+.sh-sum tr.net td{font-weight:700;color:var(--walnut)}
+.sh-sum tr.paid td{background:#EAF6EF;color:#14653D}
+.sh-sum tr.due td{background:var(--walnut);color:var(--gold-2);font-size:1.2rem;font-weight:800;padding-block:12px}
+.sh-sum tr.credit td{background:#F3E9DA;color:var(--walnut-3)}
+@media(max-width:800px){.sheet{min-height:0}}
+@media print{.sheet{min-height:296mm}body.pn .sheet{min-height:284mm}}
+
+.card>p:empty{display:none}

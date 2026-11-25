@@ -1,0 +1,6 @@
+/* قسم المصروفات */
+.chip.w-carpentry{background:#F2E4D2;color:var(--walnut-3)}
+.chip.w-paint{background:#FBF3DD;color:var(--gold-3)}
+.chip.w-none{background:#EEE;color:#555}
+a.cur{font-weight:800;color:var(--walnut);border-bottom:2px solid var(--gold)}
+.print-frame{position:fixed;right:0;bottom:0;width:0;height:0;border:0}

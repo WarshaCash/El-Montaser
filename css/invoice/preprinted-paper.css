@@ -1,0 +1,18 @@
+/* الورق المطبوع مسبقاً: الجدول فقط */
+.sheet.lh{display:block;min-height:0;width:210mm;max-width:100%}
+.lh-table{margin:0}
+.lh-table tr.sp td{padding:0;border:0;background:none}
+.lh-table tr.xr>td{padding:6px 0;border:0;background:none}
+.lh-table tbody tr{background:none!important}
+@media screen{.lh-table tr.sp td{background:repeating-linear-gradient(45deg,#F3EEDF,#F3EEDF 6px,#fff 6px,#fff 12px)}}
+@media(max-width:800px){.search-btn span,.search-btn kbd{display:none}.search-btn{flex:none;margin-inline:0}.top-actions .btn{padding:6px 10px}}
+@media print{
+ .sheet.lh{min-height:0;width:auto}
+ .lh-table thead{display:table-header-group}
+ .lh-table tfoot{display:table-footer-group}
+ body.pt #view>*:not(.pt-holder){display:none!important}
+ /* اسم العميل والهاتف والتاريخ: لا تُطبع (تُكتب بالقلم). في الفاتورة الكاملة يبقى مكانها فارغاً للكتابة */
+ .lh .scr-only{display:none!important}
+ /* مستطيل (الاسم/التاريخ/الهاتف) يُطبع مع القالب بعناوينه، وتبقى قيمه فارغة للكتابة بالقلم */
+ .sheet:not(.lh) .sh-cust b{visibility:hidden}
+}

@@ -1,0 +1,181 @@
+// عامل الخدمة: يجعل النظام يُفتح كتطبيق حتى مع ضعف الإنترنت.
+// الاستراتيجية: الشبكة أولاً (فتظهر التحديثات فور نشرها) ثم النسخة المخزّنة عند الفشل أو البطء.
+// لا يعترض أي طلب لخادم آخر (مثل Apps Script) ولا طلبات الكتابة: المزامنة لها منطقها الخاص.
+const CACHE = 'almontaser-shell-a9eafb16';  // يُحدَّث آلياً بواسطة tools/update-sw-cache.py
+// <precache:start>
+const SHELL = [
+  './',
+  'index.html',
+  'manifest.webmanifest',
+  'css/base/base.css',
+  'css/components/buttons.css',
+  'css/components/forms.css',
+  'css/components/shade.css',
+  'css/components/spacing.css',
+  'css/components/tables.css',
+  'css/features/crop-editor.css',
+  'css/features/expenses.css',
+  'css/features/search-modals-dashboard.css',
+  'css/features/sync.css',
+  'css/invoice/auto-fit.css',
+  'css/invoice/contact-icons.css',
+  'css/invoice/editor-extras.css',
+  'css/invoice/fixed-layout.css',
+  'css/invoice/item-builder.css',
+  'css/invoice/item-fields.css',
+  'css/invoice/item-form-fixes.css',
+  'css/invoice/pdf-export.css',
+  'css/invoice/preprinted-paper.css',
+  'css/invoice/sheet-improvements.css',
+  'css/invoice/sheet.css',
+  'css/layout/narrow-screens.css',
+  'css/layout/page.css',
+  'css/layout/sidebar.css',
+  'css/main.css',
+  'css/mobile/app-shell.css',
+  'css/print/base.css',
+  'css/responsive/base.css',
+  'css/responsive/laptop.css',
+  'css/responsive/phone-tables.css',
+  'css/responsive/small-devices.css',
+  'css/responsive/tablet-phone.css',
+  'js/app.js',
+  'js/boot/file-protocol-guard.js',
+  'js/config/syncConfig.js',
+  'js/core/dom.js',
+  'js/core/formatters.js',
+  'js/core/validators.js',
+  'js/core/zip.js',
+  'js/domain/accounting.js',
+  'js/domain/catalog/catalog.js',
+  'js/domain/catalog/defaultCatalog.js',
+  'js/domain/catalog/kinds/countKind.js',
+  'js/domain/catalog/kinds/entreeKind.js',
+  'js/domain/catalog/kinds/fixedKind.js',
+  'js/domain/catalog/kinds/index.js',
+  'js/domain/catalog/kinds/roomsKind.js',
+  'js/domain/catalog/kinds/sizeKind.js',
+  'js/domain/catalog/roomParts.js',
+  'js/domain/catalog/validation.js',
+  'js/domain/expenseReport.js',
+  'js/domain/expenses.js',
+  'js/features/archive/archive.js',
+  'js/features/customers/customers.js',
+  'js/features/customers/feature.js',
+  'js/features/expenses/expensesPage.js',
+  'js/features/expenses/feature.js',
+  'js/features/expenses/parts.js',
+  'js/features/expenses/payrollCard.js',
+  'js/features/finance/desk.js',
+  'js/features/finance/feature.js',
+  'js/features/finance/finance.js',
+  'js/features/invoices/categoryIcons.js',
+  'js/features/invoices/editor/customerPicker.js',
+  'js/features/invoices/editor/itemBuilder.js',
+  'js/features/invoices/editor/itemsTable.js',
+  'js/features/invoices/editor/loadInvoiceForEdit.js',
+  'js/features/invoices/editor/money.js',
+  'js/features/invoices/editor/readInvoiceForm.js',
+  'js/features/invoices/feature.js',
+  'js/features/invoices/invoiceArchive.js',
+  'js/features/invoices/invoiceDefaults.js',
+  'js/features/invoices/invoiceDelete.js',
+  'js/features/invoices/invoiceEditor.js',
+  'js/features/invoices/invoiceList.js',
+  'js/features/invoices/invoiceView.js',
+  'js/features/invoices/itemFields/entreeFields.js',
+  'js/features/invoices/itemFields/fieldScope.js',
+  'js/features/invoices/itemFields/fixedFields.js',
+  'js/features/invoices/itemFields/index.js',
+  'js/features/invoices/itemFields/numberFields.js',
+  'js/features/invoices/itemFields/roomsFields.js',
+  'js/features/invoices/sheet.js',
+  'js/features/invoices/sheetDesign.js',
+  'js/features/invoices/sheetFrame.js',
+  'js/features/quickAccess/quick.js',
+  'js/features/settings/backupSession.js',
+  'js/features/settings/cropEditor.js',
+  'js/features/settings/feature.js',
+  'js/features/settings/samplePrintData.js',
+  'js/features/settings/sections/backupSection.js',
+  'js/features/settings/sections/card.js',
+  'js/features/settings/sections/folderBackupSection.js',
+  'js/features/settings/sections/priceClauseSection.js',
+  'js/features/settings/sections/printLayoutSection.js',
+  'js/features/settings/sections/printOptionsSection.js',
+  'js/features/settings/sections/sheetDesignSection.js',
+  'js/features/settings/sections/storageSection.js',
+  'js/features/settings/settings.js',
+  'js/infrastructure/assets/iconsData.js',
+  'js/infrastructure/assets/logoData.js',
+  'js/infrastructure/backup.js',
+  'js/infrastructure/catalogStore.js',
+  'js/infrastructure/db/connection.js',
+  'js/infrastructure/db/purge.js',
+  'js/infrastructure/db/records.js',
+  'js/infrastructure/db/schema.js',
+  'js/infrastructure/db/store.js',
+  'js/infrastructure/db/transaction.js',
+  'js/infrastructure/expenseFiles.js',
+  'js/infrastructure/fileSave.js',
+  'js/infrastructure/pdf.js',
+  'js/infrastructure/repositories/backupRepository.js',
+  'js/infrastructure/repositories/customerRepository.js',
+  'js/infrastructure/repositories/invoiceRepository.js',
+  'js/infrastructure/repositories/ledgerRepository.js',
+  'js/infrastructure/repositories/workerRepository.js',
+  'js/infrastructure/sync/applyRemote.js',
+  'js/infrastructure/sync/capture.js',
+  'js/infrastructure/sync/engine.js',
+  'js/infrastructure/sync/outbox.js',
+  'js/infrastructure/sync/remote.js',
+  'js/infrastructure/sync/state.js',
+  'js/shell/chrome.js',
+  'js/shell/mobileNav.js',
+  'js/shell/pwa.js',
+  'js/shell/registry.js',
+  'js/shell/responsiveTables.js',
+  'js/shell/router.js',
+  'js/shell/sheetFit.js',
+  'js/shell/syncUi.js',
+  'js/shell/touchEnhance.js',
+  'js/ui/controls.js',
+  'js/ui/ui.js',
+  'assets/icon-192.png',
+  'assets/icons/call.svg',
+  'assets/icons/cash.svg',
+  'assets/icons/instapay.svg',
+  'assets/icons/whatsapp.svg',
+  'assets/logo.webp',
+  'assets/watermark.webp',
+];
+// <precache:end>
+const NETWORK_TIMEOUT_MS = 4000;
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+});
+
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    const fallback = () => cache.match(request, { ignoreSearch: true }).then((hit) => hit || (request.mode === 'navigate' ? cache.match('index.html') : undefined));
+    try {
+      const response = await Promise.race([
+        fetch(request),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), NETWORK_TIMEOUT_MS)),
+      ]);
+      if (response.ok) cache.put(request, response.clone());
+      return response;
+    } catch {
+      return (await fallback()) || Response.error();
+    }
+  })());
+});

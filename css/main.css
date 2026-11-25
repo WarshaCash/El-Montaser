@@ -1,0 +1,33 @@
+/* نقطة دخول الأنماط: الترتيب هنا هو ترتيب الـ cascade الأصلي بالضبط — لا تغيّره.
+   الملفات اللاحقة (responsive/ و mobile/) تتعمّد تجاوز ما قبلها. */
+@import url("base/base.css");
+@import url("layout/sidebar.css");
+@import url("layout/page.css");
+@import url("components/forms.css");
+@import url("components/buttons.css");
+@import url("components/tables.css");
+@import url("components/shade.css");
+@import url("invoice/sheet.css");
+@import url("layout/narrow-screens.css");
+@import url("print/base.css");
+@import url("components/spacing.css");
+@import url("invoice/item-fields.css");
+@import url("invoice/sheet-improvements.css");
+@import url("features/search-modals-dashboard.css");
+@import url("invoice/preprinted-paper.css");
+@import url("features/crop-editor.css");
+@import url("invoice/pdf-export.css");
+@import url("invoice/item-form-fixes.css");
+@import url("invoice/auto-fit.css");
+@import url("invoice/contact-icons.css");
+@import url("invoice/item-builder.css");
+@import url("invoice/editor-extras.css");
+@import url("invoice/fixed-layout.css");
+@import url("features/expenses.css");
+@import url("features/sync.css");
+@import url("responsive/base.css");
+@import url("responsive/laptop.css");
+@import url("responsive/tablet-phone.css");
+@import url("responsive/phone-tables.css");
+@import url("responsive/small-devices.css");
+@import url("mobile/app-shell.css");

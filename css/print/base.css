@@ -1,0 +1,12 @@
+/* الطباعة */
+@media print{
+ @page{size:A4 portrait;margin:0} /* هامش 0 يمنع المتصفح من طباعة العنوان والرابط أعلى/أسفل الصفحة */
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body{background:#fff}
+ #sidebar,.topbar,.no-print,#shade{display:none!important}
+ main{margin:0!important}
+ #view{padding:0;max-width:none}
+ .sheet{border:0;box-shadow:none;padding:12mm;margin:0;max-width:none;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+ .card{box-shadow:none;border:0;padding:0}
+ tbody tr:hover{background:inherit}
+}

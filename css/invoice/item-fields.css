@@ -1,0 +1,18 @@
+/* حقول القسم والمشتملات */
+.fields{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.fields>.inc{flex:1 1 100%;margin:0}
+.fields>p{flex:0 1 auto;margin:0;align-self:center;font-weight:600}
+/* القسم + أول حقل (الاستايل/العدد/المقاس) بجانب بعض */
+.dc{display:contents}
+.inc input[type=number]{width:130px}
+.catrow{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.catrow>div,.catrow .fields{display:contents}
+.inc{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0}
+.inc>label{display:inline-flex;align-items:center;gap:8px;font-weight:700;min-width:140px}
+.inc>span{display:inline-flex;gap:10px;flex-wrap:wrap;margin-inline-start:0}
+
+/* بنود الفاتورة: سطر لكل مشتمل ومقاسه في عمود المقاس */
+.sheet tbody tr:nth-child(even),.sheet tbody tr:hover{background:none}
+.sh-items td.mid{vertical-align:middle}
+.sh-items td.sz{white-space:nowrap;font-weight:700;text-align:center;color:var(--walnut)}
+.sh-items tr:not(.last)>td:not([rowspan]){border-bottom:1px dotted #E1D8C0}

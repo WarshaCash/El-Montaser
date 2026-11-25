@@ -1,0 +1,7 @@
+/* الجداول */
+table{width:100%;border-collapse:separate;border-spacing:0}
+th{background:var(--walnut);color:var(--gold-2);font-weight:700;font-size:.9rem}
+th:first-child{border-top-right-radius:10px}th:last-child{border-top-left-radius:10px}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid #EFE8D6}
+tbody tr:nth-child(even){background:#FCFAF4}
+tbody tr:hover{background:#FAF3DC}

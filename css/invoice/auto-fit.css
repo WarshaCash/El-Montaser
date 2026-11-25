@@ -1,0 +1,22 @@
+/* ===== ضغط الفاتورة تلقائياً لتتسع في صفحة A4 واحدة (المستوى يختاره sheet.js) ===== */
+.sheet.lh.measuring .scr-only{display:none!important}
+.sheet.fit-1{--fp:6px 10px;--fs:.95rem;--fh:.86rem;--fl:1.55;--fg:8px;--fpad:11mm;--logo:88px;--h2:1.4rem;--stH:22mm;--stW:36mm;--cl:.8rem;--due:1.1rem}
+.sheet.fit-2{--fp:4px 8px;--fs:.9rem;--fh:.8rem;--fl:1.45;--fg:6px;--fpad:10mm;--logo:78px;--h2:1.3rem;--stH:18mm;--stW:30mm;--cl:.76rem;--due:1rem}
+.sheet.fit-3{--fp:3px 7px;--fs:.84rem;--fh:.75rem;--fl:1.35;--fg:5px;--fpad:9mm;--logo:68px;--h2:1.2rem;--stH:14mm;--stW:26mm;--cl:.72rem;--due:.95rem}
+.sheet.fit-4{--fp:2px 6px;--fs:.78rem;--fh:.7rem;--fl:1.28;--fg:4px;--fpad:8mm;--logo:58px;--h2:1.1rem;--stH:12mm;--stW:22mm;--cl:.68rem;--due:.88rem}
+.sheet.fit-5{--fp:1px 5px;--fs:.72rem;--fh:.66rem;--fl:1.2;--fg:3px;--fpad:7mm;--logo:50px;--h2:1.0rem;--stH:10mm;--stW:20mm;--cl:.64rem;--due:.8rem}
+.sheet[class*="fit-"]{padding:var(--fpad);line-height:var(--fl)}
+.sheet[class*="fit-"] .sh-head{gap:calc(var(--fg) * 2);padding:calc(var(--fg) * 1.2) 14px}
+.sheet[class*="fit-"] .logo{height:var(--logo);width:var(--logo)}
+.sheet[class*="fit-"] .sh-cust{margin:calc(var(--fg) * 2.2) 0 var(--fg);padding:var(--fg) 12px}
+.sheet[class*="fit-"] .sh-cust .cf{font-size:var(--fs)}
+.sheet[class*="fit-"] h3{margin:var(--fg) 0 calc(var(--fg) / 2);font-size:var(--fs)}
+.sheet[class*="fit-"] table{margin-bottom:var(--fg)}
+.sheet[class*="fit-"] th,.sheet[class*="fit-"] td{padding:var(--fp)}
+.sheet[class*="fit-"] td{font-size:var(--fs)}
+.sheet[class*="fit-"] th{font-size:var(--fh)}
+.sheet[class*="fit-"] .sh-sum tr.due td{padding-block:var(--fg);font-size:var(--due)}
+.sheet[class*="fit-"] .sh-foot{margin-top:auto;padding-top:var(--fg)}
+.sheet[class*="fit-"] .sh-row{margin-top:var(--fg);font-size:var(--fs)}
+.sheet[class*="fit-"] .stamp{height:var(--stH);width:var(--stW)}
+.sheet[class*="fit-"] .clause{padding:var(--fg) 10px;font-size:var(--cl)}

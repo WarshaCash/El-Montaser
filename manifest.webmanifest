@@ -1,0 +1,23 @@
+{
+  "name": "المنتصر — ورشة نجارة",
+  "short_name": "المنتصر",
+  "description": "لتصنيع الموبيليا الحديثة والباب والشباك",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#F7F3EC",
+  "theme_color": "#241206",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "فاتورة جديدة", "url": "./#/invoices/new" },
+    { "name": "تحصيل دفعة", "url": "./#/collect" }
+  ]
+}

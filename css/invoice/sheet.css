@@ -1,0 +1,28 @@
+/* الفاتورة A4 */
+.sheet{background:#fff;color:var(--ink);padding:14mm;border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);max-width:210mm;margin:0 auto 24px}
+.sh-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 18px;border-radius:10px 10px 0 0;background-color:#241206;
+  background-image:radial-gradient(circle at 10% 50%,rgba(249,192,99,.28),transparent 34%),repeating-linear-gradient(45deg,rgba(249,192,99,.13) 0 1px,transparent 1px 15px),repeating-linear-gradient(-45deg,rgba(249,192,99,.13) 0 1px,transparent 1px 15px),linear-gradient(135deg,color-mix(in srgb,var(--walnut) 90%,#fff),color-mix(in srgb,var(--walnut) 70%,#000))}
+.sh-txt{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:var(--h2,1.5rem);color:#fff;text-align:center}
+.sh-head h2{margin:0;color:#fff;font-size:1em;font-weight:800;line-height:1.25;letter-spacing:.2px}
+.sh-sub{display:flex;align-items:center;gap:10px;width:80%;color:var(--gold-2);font-size:.62em;font-weight:700}
+.sh-sub i{flex:1;height:1px;background:var(--gold-2);display:block}
+.sh-tag{font-size:.5em;color:#fff;font-weight:600;letter-spacing:.3px}
+.sh-gold{height:3px;border-top:3px solid var(--gold);border-bottom:1px solid var(--gold-2)}
+.sh-head .logo{height:var(--logo,100px);width:var(--logo,100px)}
+.logo{height:60px;width:60px;flex:none;object-fit:cover;border-radius:50%}
+.logo.ph{display:grid;place-items:center;border:2px dashed var(--gold);border-radius:50%;font-size:.75rem;color:var(--muted);clip-path:none}
+.sh-cust{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0 14px;background:var(--ivory);padding:9px 14px;border-inline-start:4px solid var(--gold);border-radius:8px}
+.sh-cust .cf{display:inline-flex;align-items:baseline;gap:6px;font-size:.95rem}
+.sh-cust small{color:var(--muted);font-size:.85rem;font-weight:600}
+.sh-cust b{color:var(--walnut);font-weight:800;unicode-bidi:isolate}
+.sheet h3{color:var(--walnut);margin:14px 0 6px}
+.sheet table{margin-bottom:14px}
+.sheet thead{display:table-header-group}
+.sheet tr{break-inside:avoid}
+.sh-sum{width:55%;margin-inline-start:auto}
+.sh-sum td.num{font-weight:700}
+
+.sh-foot{break-inside:avoid;margin-top:14px}
+.clause{border:1px solid var(--gold);background:#FFFCF2;border-radius:6px;padding:10px 12px;font-size:.85rem;margin:0}
+.sh-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;font-weight:700;color:var(--walnut)}
+.stamp{display:grid;place-items:center;width:32mm;height:20mm;border:1px dashed #A9A38F;border-radius:6px;color:#A9A38F;font-size:.8rem;font-weight:400}

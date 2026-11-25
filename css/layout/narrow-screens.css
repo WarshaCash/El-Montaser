@@ -1,0 +1,14 @@
+/* الشاشات الضيقة */
+@media(max-width:800px){
+ #sidebar{width:var(--sb);transform:translateX(100%);transition:transform .22s ease;box-shadow:-8px 0 24px rgba(0,0,0,.3)}
+ body.open #sidebar{transform:none}
+ body.collapsed #sidebar{width:var(--sb)}
+ body.collapsed .brand-txt{display:flex}body.collapsed .label{display:inline}
+ body.collapsed .brand-logo{width:96px;height:96px}
+ body.collapsed .brand{padding:16px 14px 14px}
+ body.collapsed .nav-item>a{justify-content:flex-start;padding:11px 14px}
+ main,body.collapsed main{margin-right:0}
+ #view{padding:14px}.topbar{padding:10px 14px}
+ .sheet{padding:8mm}.sh-sum{width:100%}
+ body.open #shade{display:block;position:fixed;inset:0;background:rgba(36,18,6,.55);z-index:10}
+}

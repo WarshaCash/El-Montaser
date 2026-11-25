@@ -1,0 +1,12 @@
+/* ===== إصلاح تنسيق القوائم المنسدلة والنصوص الثابتة في نموذج البند ===== */
+.f select{min-width:170px;padding-inline-start:12px;padding-inline-end:12px;text-align:start;text-align-last:start;cursor:pointer}
+.fields>p{align-self:flex-end;display:flex;align-items:center;min-height:42px;line-height:1.5;padding-inline:4px}
+.inc>span select{min-width:140px}
+@media(max-width:800px){.f select{min-width:0;width:100%}.f{min-width:140px}.fields>p{flex:1 1 100%;min-height:0}}
+
+/* حقول المقاس بعنوان ظاهر دائماً (العرض / الطول / العدد) + إبراز القائمة الناقصة عند الخطأ */
+.mini{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.inc .mini input[type=number]{width:100px}
+select.bad{border-color:#B3261E;box-shadow:0 0 0 3px rgba(179,38,30,.18)}
+.card>h3{margin-top:18px}
+@media(max-width:800px){.mini{flex:1 1 140px}.inc .mini input[type=number]{width:100%}}

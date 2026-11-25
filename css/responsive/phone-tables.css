@@ -1,0 +1,16 @@
+/* جوال: الجداول تتحول إلى بطاقات (العنوان يأتي من data-label الذي يضيفه responsiveTables.js) */
+@media (max-width:640px){
+  table.rt{display:block;border:0}
+  table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.rt tbody{display:flex;flex-direction:column;gap:10px}
+  table.rt tr{display:block;border:1px solid var(--line);border-radius:12px;background:#fff!important;padding:4px 12px;box-shadow:0 1px 3px rgba(36,18,6,.06)}
+  table.rt td{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed #EFE8D6;text-align:left;min-width:0;word-break:break-word}
+  table.rt td:last-child{border-bottom:0}
+  table.rt td::before{content:attr(data-label);flex:none;color:var(--muted);font-size:.8rem;font-weight:700;text-align:right}
+  table.rt td:not([data-label])::before{display:none}
+  table.rt td .acts,table.rt td .btn{margin-inline-start:auto}
+  table.rt td[colspan]{display:block;text-align:center}
+  table.rt tfoot{display:block}
+  table.rt tfoot tr{display:flex;flex-wrap:wrap;gap:6px 14px;background:var(--ivory)!important}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+}

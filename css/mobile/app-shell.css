@@ -1,0 +1,67 @@
+/* ===================================================================
+   تصميم الجوال: تطبيق بملء الشاشة (شريط علوي داكن + شريط سفلي + نوافذ تنزلق من الأسفل)
+   =================================================================== */
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+
+@media (max-width:800px){
+  :root{--bn-h:66px;--safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px)}
+  html,body{overscroll-behavior-y:none}
+  body{-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-touch-callout:none}
+  a,button,.tile,.cat-tile,.pal-row{-webkit-user-select:none;user-select:none}
+  input,textarea,select{-webkit-user-select:text;user-select:text}
+  #view>*{animation:viewIn .22s ease both}
+
+  /* الشريط العلوي: داكن كشريط التطبيقات ويندمج مع شريط حالة الجهاز */
+  .topbar{background:linear-gradient(180deg,#2F170A,var(--walnut));border-bottom:2px solid var(--gold);color:#fff;
+    padding:calc(8px + var(--safe-t)) 12px 8px;backdrop-filter:none}
+  .topbar h1{color:#fff;font-size:1.1rem;font-weight:800}
+  #toggle,.search-btn{background:rgba(255,255,255,.1);border:1px solid rgba(249,192,99,.35);color:var(--gold-2);border-radius:12px}
+  #toggle:active,.search-btn:active{background:rgba(255,255,255,.2)}
+  .sync-badge{box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+
+  /* الشريط السفلي تحت الطبقة المعتمة للقائمة */
+  #bottomnav{z-index:8;padding-bottom:calc(6px + var(--safe-b))}
+  #view{padding:12px 12px calc(var(--bn-h) + var(--safe-b) + 28px)}
+  #sidebar{border-radius:0}
+  body.open #shade{backdrop-filter:blur(2px)}
+
+  /* البطاقات والأقسام */
+  .card{border-radius:16px;box-shadow:0 1px 2px rgba(36,18,6,.06),0 6px 18px rgba(36,18,6,.06)}
+  .card h3{font-size:1rem}
+  .kpi{border-top-width:3px;padding:12px 14px}
+  .kpi span{font-size:.78rem}
+  .tile{padding:12px 14px;min-height:58px;justify-content:center;border-radius:16px}
+  .tile span{display:none}
+  .tile b{font-size:1rem}
+  .tile:active{transform:scale(.97)}
+  .tile[href="#/invoices/new"],.tile[href="#/customers"],.tile[href="#"]{display:none} /* مكررة في الشريط السفلي */
+  .hero-search{border-radius:16px;padding:13px 16px}
+
+  /* شاشة الفاتورة: شريط حفظ ثابت فوق الشريط السفلي */
+  .edit-actions{position:sticky;bottom:calc(var(--bn-h) + var(--safe-b) + 8px);z-index:6;display:flex;gap:10px;
+    padding:10px;margin:14px 0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(36,18,6,.18)}
+  .edit-actions .btn{flex:1 1 0;min-width:0;padding-inline:10px}
+
+  /* النوافذ تنزلق من الأسفل كالتطبيقات */
+  .modal-layer{align-items:flex-end;padding:0}
+  .modal,.modal.wide{width:100%;max-width:none;max-height:92dvh;overflow-y:auto;border:0;border-top:3px solid var(--gold);
+    border-radius:24px 24px 0 0;animation:sheetUp .24s ease both;padding-bottom:var(--safe-b)}
+  .modal-head{position:sticky;top:0;z-index:2;padding:14px 16px}
+  .modal-head::before{content:'';position:absolute;top:6px;left:50%;width:42px;height:4px;margin-left:-21px;border-radius:4px;background:rgba(255,255,255,.35)}
+  .pal-input{position:sticky;top:52px;z-index:1;background:#fff}
+  .pal-list{max-height:none}
+  .pal-row{flex-wrap:wrap;gap:8px;padding:12px 16px}
+  .pal-main{flex:1 1 100%}
+  .pal-row>.btn{flex:1 1 30%;min-width:0}
+
+  .toast{bottom:calc(var(--bn-h) + 96px + var(--safe-b))} /* فوق شريط الحفظ الثابت */
+  form.row>input,form.row>select,form.row>.btn{flex:1 1 100%}
+
+  /* الجداول كبطاقات: الخلية الأولى عنوان البطاقة */
+  table.rt tr{border-inline-start:4px solid var(--gold)}
+  table.rt td:first-child{font-weight:800;color:var(--walnut);font-size:1.02rem}
+}
+
+@media (prefers-reduced-motion:reduce){#view>*,.modal{animation:none!important}}

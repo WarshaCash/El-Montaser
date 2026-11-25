@@ -1,0 +1,9 @@
+@media (max-width:1100px){
+  /* الورقة تتصغّر لتناسب العرض (sheetFit.js) فلا حاجة لتمرير أفقي، ووجوده يعطّل الالتصاق (sticky) */
+  #view:has(.sheet:not(.lh)){overflow:visible}
+  .search-btn span,.search-btn kbd{display:none}
+  .search-btn{flex:none;width:42px;height:42px;padding:0;display:grid;place-items:center;margin-inline:0}
+  #view{padding:18px}
+  .topbar{padding:10px 18px}
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+}

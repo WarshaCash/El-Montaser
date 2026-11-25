@@ -1,0 +1,19 @@
+/* الصفحة */
+main{margin-right:var(--sb);transition:margin .22s ease;min-height:100vh}
+body.collapsed main{margin-right:var(--sbc)}
+.topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:12px 24px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--gold)}
+.topbar h1{font-size:1.3rem;margin:0;color:var(--walnut)}
+#toggle{display:grid;place-items:center;width:40px;height:40px;background:var(--white);color:var(--walnut);border:1px solid var(--line);border-radius:10px;cursor:pointer;padding:0}
+#toggle:hover{border-color:var(--gold);background:var(--ivory)}
+#view{padding:24px;max-width:none;width:100%}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:18px;box-shadow:var(--shadow);overflow-x:auto}
+.card h3{margin:0 0 14px;font-size:1.05rem;color:var(--walnut);padding-inline-start:10px;border-inline-start:4px solid var(--gold)}
+.card h4{margin:14px 0 8px;color:var(--walnut-3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px;margin-bottom:18px}
+.grid .card{margin:0}
+.kpi{border-top:4px solid var(--gold)}
+.kpi span{display:block;color:var(--muted);font-size:.88rem}
+.kpi b{display:block;font-size:1.6rem;color:var(--walnut);margin-top:2px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.empty{color:var(--muted);padding:28px;text-align:center;border:1px dashed #D8CFB6;border-radius:var(--r);background:#FDFBF5}
+.err{color:var(--danger);margin:6px 0;font-weight:600}

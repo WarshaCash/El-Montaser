@@ -1,0 +1,9 @@
+/* رقم التواصل: أربع أيقونات في صف واحد (اتصال / واتساب / فودافون كاش / إنستاباي) والرقم أسفلها */
+.contact{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.ico-row{display:flex;align-items:center;justify-content:center;gap:8px}
+.ico{display:block;width:34px;height:34px;min-width:34px;max-width:34px;flex:none;border-radius:50%;object-fit:contain;background:#fff;border:1px solid #E3D5C2;padding:0}
+.contact .num{align-self:stretch;text-align:center;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;font-size:1.08em;letter-spacing:1.2px;line-height:1.2;padding-top:5px;border-top:1px solid var(--gold)}
+.sheet.fit-3 .ico{width:30px;height:30px;min-width:30px;max-width:30px}
+.sheet.fit-4 .ico,.sheet.fit-5 .ico{width:26px;height:26px;min-width:26px;max-width:26px}
+.contact .num.wa{border-top:0;padding-top:0}
+.sheet.fit-4 .contact,.sheet.fit-5 .contact{gap:3px}

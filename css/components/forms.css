@@ -1,0 +1,11 @@
+/* حقول الإدخال */
+input,select,textarea{font:inherit;color:var(--ink);padding:9px 12px;border:1px solid #CDC4AB;border-radius:10px;background:#fff;min-width:0;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(249,192,99,.28)}
+input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:var(--walnut);vertical-align:middle}
+.f{display:inline-flex;flex-direction:column;gap:4px;font-size:.88rem;color:var(--muted);font-weight:600}
+.row,form.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:8px}
+.inc{margin:8px 0;padding:8px 12px;background:var(--ivory);border-radius:10px}
+.inc>span{display:inline-flex;gap:8px;flex-wrap:wrap;margin-inline-start:14px}
+.pre{white-space:pre-line}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+.wide{width:100%;font:inherit}
